@@ -2,17 +2,17 @@ Rails.application.routes.draw do
 
   get '/'=> 'users#index'
 
-  get 'users' => 'users#show_all'
+  #get 'users' => 'users#show_all'
 
-  get 'users/:id' => 'users#show', id: /\d++/
+  #get 'users/:id' => 'users#show', id: /\d++/
 
   post 'users/new' => 'users#create'
 
-  put 'users/:id' => 'users#update', id: /\d++/
+  #put 'users/:id' => 'users#update', id: /\d++/
 
-  delete 'users/:id' => 'users#delete', id: /\d++/
+  #delete 'users/:id' => 'users#delete', id: /\d++/
 
-  get 'groups/:id' => 'groups#show', id: /\d++/
+  #get 'groups/:id' => 'groups#show', id: /\d++/
 
   post 'groups/new' => 'groups#create'
 

@@ -5,6 +5,6 @@ class AuditServices::AuditExistCheck
   end
 
   def call
-    AuditRepo.exist(@from_name,@to_name)
+    AuditRepo.new.exist(@from_name,@to_name)
   end
 end

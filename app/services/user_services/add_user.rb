@@ -7,6 +7,6 @@ class UserServices::AddUser
   end
 
   def call
-    UserRepo.create(@name,@email,@mobile,@group)
+    UserRepo.new.create(@name,@email,@mobile,@group)
   end
 end

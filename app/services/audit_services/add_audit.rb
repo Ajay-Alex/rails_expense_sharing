@@ -10,7 +10,7 @@ class AuditServices::AddAudit
     @user_list.each { |user|
       if user.name != @user
         if !AuditServices::AuditExistCheck.new(user.name,@user).call
-          AuditRepo.create(user.name,@user,@amount/size)
+          AuditRepo.new.create(user.name,@user,@amount/size)
         else
           AuditServices::UpdateAudit.new(user.name,@user,@amount/size).call
         end

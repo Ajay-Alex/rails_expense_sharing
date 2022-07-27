@@ -4,6 +4,6 @@ class GroupServices::GroupExistCheck
   end
 
   def call
-    GroupRepo.exist
+    GroupRepo.new.exist(@name)
   end
 end

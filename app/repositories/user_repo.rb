@@ -1,4 +1,7 @@
 class UserRepo
+  def initialize
+    super
+  end
   def create(name,email,mobile,group)
     User.new(name: name,email: email,mobile: mobile,group: group).save
   end
@@ -12,6 +15,6 @@ class UserRepo
   end
 
   def exist(name)
-    User.where(name: name).present?
+    User.where(:name=> name).present?
   end
 end

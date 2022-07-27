@@ -4,6 +4,6 @@ class GroupServices::AddGroup
   end
 
   def call
-    GroupRepo.create(name)
+    GroupRepo.new.create(@name)
   end
 end

@@ -21,15 +21,16 @@ class UsersController < ApplicationController
 
   def create
     group_exist_check=GroupServices::GroupExistCheck.new(params[:group]).call
-    if group_exist_check == false
+    if !group_exist_check
       render json: "Group doesn't exist"
       return
     end
     user_exist_check=UserServices::UserExistCheck.new(params[:name]).call
-    if user_exist_check == true
+    if user_exist_check
       render json: "User already exists"
       return
     end
+    group=GroupServices::GetGroupByName.new(params[:group]).call.id
     UserServices::AddUser.new(params[:name],params[:email],params[:mobile],group).call
     render json: "Successfully Created"
   end

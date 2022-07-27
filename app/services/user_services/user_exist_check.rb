@@ -3,6 +3,6 @@ class UserServices::UserExistCheck
     @name=name
   end
   def call
-    UserRepo.exist(@namez)
+    UserRepo.new.exist(@name)
   end
 end

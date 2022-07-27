@@ -17,7 +17,7 @@ class GroupsController < ApplicationController
   # end
 
   def create
-    if GroupServices::GroupExistCheck.new(params.permit(:name)).call
+    if GroupServices::GroupExistCheck.new(params[:name]).call
       render json: "Group Already Exist"
     else
       GroupServices::AddGroup.new(params.permit(:name)).call

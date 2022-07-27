@@ -4,6 +4,6 @@ class UserServices::GetUserByName
   end
 
   def call
-    UserRepo.find_by_name(@name)
+    UserRepo.new.find_by_name(@name)
   end
 end

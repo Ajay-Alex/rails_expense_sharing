@@ -4,7 +4,6 @@ class UserServices::GetUsersByGroup
   end
 
   def call
-    UserRepo.find_by_group(@group)
+    UserRepo.new.find_by_group(@group)
   end
 end
-x
