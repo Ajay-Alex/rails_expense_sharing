@@ -2,6 +2,21 @@ Rails.application.routes.draw do
 
   get '/'=> 'users#index'
 
+  get 'users' => 'users#show_all'
+
+  get 'users/:id' => 'users#show', id: /\d++/
+
+  post 'users/new' => 'users#create'
+
+  put 'users/:id' => 'users#update', id: /\d++/
+
+  delete 'users/:id' => 'users#delete', id: /\d++/
+
+  get 'groups/:id' => 'groups#show', id: /\d++/
+
+  post 'groups/new' => 'groups#create'
+
+  post 'txn/new' => 'audits#new_txn'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
