@@ -4,6 +4,6 @@ class GroupServices::GroupExistCheck
   end
 
   def call
-    return Group.where(name: @name).present?
+    GroupRepo.exist
   end
 end

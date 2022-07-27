@@ -5,6 +5,6 @@ class AuditServices::AuditExistCheck
   end
 
   def call
-    Audit.where(:to_name => to, :from_name => from).present?
+    AuditRepo.exist(@from_name,@to_name)
   end
 end

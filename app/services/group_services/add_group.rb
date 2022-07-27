@@ -4,6 +4,6 @@ class GroupServices::AddGroup
   end
 
   def call
-    Group.new(params.permit(:name)).save
+    GroupRepo.create(name)
   end
 end

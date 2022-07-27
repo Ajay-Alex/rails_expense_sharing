@@ -3,6 +3,6 @@ class UserServices::UserExistCheck
     @name=name
   end
   def call
-    return User.where(name: @name).present?
+    UserRepo.exist(@namez)
   end
 end

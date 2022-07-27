@@ -6,7 +6,7 @@ class AuditServices::UpdateAudit
   end
 
   def call
-    audits=Audit.where(:to_name => @to_name, :from_name => @from_name)
+    audits=AuditRepo.new.find_by_from_name_and_to_name(@from_name,@to_name)
     audits.each { |audit|
       audit.update(:from_name=> @from_name,:to_name=> @to_name,:amount=> audit.amount + @amount)
     }
